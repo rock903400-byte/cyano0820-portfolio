@@ -1,16 +1,55 @@
-# React + Vite
+# cyano0820-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> 一位老師的影像日記 — 劉德榮（@cyano0820）YouTube 頻道作品集網站
 
-Currently, two official plugins are available:
+以影像記錄生活 18 年，把教育、兩個寶寶、家庭日常、廟裡的詩歌、
+巷口街頭與音樂都放進這個「小小宇宙」。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+頻道：<https://www.youtube.com/@cyano0820>
 
-## React Compiler
+## 技術棧
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React 19 + Vite 8，純前端靜態站，無後端。
 
-## Expanding the Oxlint configuration
+| 套件 | 版本 | 用途 |
+|---|---|---|
+| `react` / `react-dom` | ^19.2.7 | UI |
+| `vite` | ^8.1.1 | 建置工具 |
+| `@vitejs/plugin-react` | ^6.0.3 | React 支援 |
+| `oxlint` | ^1.71.0 | Lint（取代 ESLint） |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 指令
+
+```bash
+npm install
+npm run dev       # 開發伺服器
+npm run build     # 建置到 dist/
+npm run preview   # 預覽建置結果
+npm run lint      # oxlint
+```
+
+## 結構
+
+```text
+cyano0820-portfolio/
+├── index.html              # Vite entry
+├── src/
+│   ├── main.jsx            # React 掛載
+│   ├── App.jsx / App.css   # 主頁面
+│   ├── index.css           # 全域樣式
+│   └── data/
+│       ├── channel.js      # 頻道資訊（名稱、訂閱數、簡介、語錄）
+│       └── videos.js       # 影片清單
+├── public/favicon.svg
+└── vite.config.js
+```
+
+## 資料來源
+
+頻道統計（訂閱數、影片數、創建日期）與頭像橫幅皆為靜態寫入於
+`src/data/channel.js` 的 `CHANNEL_INFO`，**不會自動更新**。
+需要準確數字時請手動更新該檔案。
+
+## License
+
+[MIT](LICENSE)
